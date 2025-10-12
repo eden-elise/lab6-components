@@ -3,63 +3,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DOM RnD</title>
-    <style>
-
-        chat-widget {
-            display: flex;
-            flex-direction: column;
-            width: 400px;
-            height: 600px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            overflow: hidden;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-        }
-
-        chat-window {
-            display: block;
-            width: 400px;
-            height: 600px;
-            background: #f0f0f0;
-            border: 1px solid #ccc;
-        }
-
-        chat-window p {
-            margin: 0.5em;
-            padding: 0.5em;
-            border-radius: 8px;
-            max-width: 70%;
-        }
-
-        chat-window p.User {
-            background: #d1e7dd;
-            align-self: flex-start;
-            margin-left: auto;
-        }
-
-        chat-window p.Bot {
-            background: #f8d7da;
-            align-self: flex-end;
-            margin-right: auto;
-        }
-
-        #chatForm {
-            display: flex;
-            padding: 0.5em;
-            background: #fff;
-            border-top: 1px solid #ccc;
-
-            input[type="text"] {
-                flex: 1;
-                padding: 0.5em;
-                border: 1px solid #ccc;
-                border-radius: 4px;
-                font-size: 1em;
-            }
-        }
-
-    </style>
+    <title>HTML/CSS only prototype</title>
+    <link rel="stylesheet" href="styles.css" />
 
     <script type="module">
         import { getBotResponse } from './eliza.js';
@@ -117,15 +62,32 @@
     </script>
 </head>
 <body>
-
-<chat-widget>
-    <chat-window id="chatWindow"></chat-window>
-    <form id="chatForm">
-        <input type="text" placeholder="Type a message" id="messageBox" autocomplete="off">
-        <button id="sendBtn" type="button">Send</button>
+<main class="chat-container">
+    <section class="chat-messages">
+        <!-- two classes for the message articles because all messages will
+        have certain base style features and then the bot and user messages
+        will have styles that are specific to them -->
+        <article class="message bot-messages">
+            <div class="message-content">
+                <p class="message-text"> Hello! How can I help you today?</p>
+                <time class="message-timestamp">10:30am</time>
+            </div>
+        </article>
+        <article class="message user-messages">
+            <div class="message-content">
+                <p class="message-text"> Hello! I am learning HTML and CSS</p>
+                <time class="message-timestamp">10:31am</time>
+            </div>
+        </article>
+    </section>
+    <form class="chat-input-form">
+        <input
+                type="text"
+                class="chat-input"
+                placeholder="Type your message here"
+        />
+        <button type="submit" class="chat-send">Send</button>
     </form>
-</chat-widget>
-
-
+</main>
 </body>
 </html>
