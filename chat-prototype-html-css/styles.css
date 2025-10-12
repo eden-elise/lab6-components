@@ -68,3 +68,62 @@ Chat Messages
 .bot-messages {
     align-self: flex-start;
 }
+
+/*
+Message Avatars
+ */
+.message-avatar {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.user-message .message-avatar {
+    background-color: var(--color-mint);
+}
+
+.bot-message .message-avatar {
+    background-color: var(--color-pink);
+}
+
+.avatar-icon {
+    font-size: 1.5rem;
+}
+
+/*
+Message content
+ */
+
+.message-content {
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+}
+
+.message-text {
+    padding: .75rem 1rem;
+    border-radius: 1.125rem;
+    line-height: 1.4;
+}
+
+.user-messages .message-text {
+    background-color: var(--color-mint);
+    color: #333;
+    border-bottom-right-radius: .25rem;
+}
+
+.bot-messages .message-text {
+    background-color: var(--color-pink);
+    color: #333;
+    border-bottom-left-radius: .25rem;
+}
+
+.message-timestamp {
+    font-size: .75rem;
+    color: #999;
+    padding: 0 .5rem;
+}
