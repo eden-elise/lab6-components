@@ -14,7 +14,7 @@ function createAvatar(type) {
 
     const avatarIcon = document.createElement('span');
     avatarIcon.className = 'avatar-icon';
-    avatarIcon.textContent = type === 'user' ? '😊' : '🤖';
+    avatarIcon.textContent = type === 'user' ? '😊' : '🤖'; //if type =user use smiley else use robot
 
     avatarDiv.appendChild(avatarIcon);
     return avatarDiv;
@@ -35,4 +35,38 @@ function createTimestamp() {
     timestamp.setAttribute("datetime", now.toISOString());
     return timestamp;
 }
+
+/**
+ * Creates the content section of a message (message and timestamp)
+ * @param {string} text - the message
+ * @returns {HTMLElement} - the content div containing text and timestamp
+ */
+function createMessage(text) {
+    const contentDiv = document.createElement("div");
+    contentDiv.className="message-content";
+
+    const textParagraph = document.createElement("p");
+    textParagraph.className = "message-text";
+    textParagraph.textContent = text;
+
+    contentDiv.appendChild(textParagraph);
+    contentDiv.appendChild(createTimestamp());
+    return contentDiv;
+}
+
+/**
+ * adds a message to the interface
+ * @param {string} text - the message
+ * @param {string} type - user or bot
+ */
+function addMessage(text, type) {
+    const messageArticle = document.createElement("article");
+    messageArticle.className = `message message-${type}`;
+
+    messageArticle.appendChild(createAvatar(type));
+    messageArticle.appendChild(createMessage(text));
+    chatMessages.appendChild(messageArticle);
+    chatMessages.scrollTop = chatMessages.scrollHeight; //autoscroll to bottom
+}
+
 
