@@ -1,4 +1,4 @@
-import {getBotResponse} from "./eliza";
+import {getBotResponse} from "./eliza.js";
 
 const chatMessages = document.getElementById("chatMessages");
 const messageInput = document.getElementById("messageInput");
@@ -78,7 +78,7 @@ function addMessage(text, type) {
 function formSubmit(event) {
     event.preventDefault(); //prevents page reload and loss of chat messages
 
-    const userMessage = messageInput.trim(); //remove whitespace at beginning and end
+    const userMessage = messageInput.value.trim(); //remove whitespace at beginning and end
 
     if (userMessage==="") {
         return;
@@ -96,4 +96,6 @@ function formSubmit(event) {
 }
 
 chatForm.addEventListener("submit", formSubmit);
+
+addMessage("Hi! How are you today?", "bot");
 
