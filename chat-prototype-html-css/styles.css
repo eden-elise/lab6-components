@@ -31,7 +31,7 @@ Chat Container
  */
 .chat-container {
     width: 90%;
-    max-width: 25rem;
+    max-width: 25rem; /* is this fixed height or do you mean use px? */
     height: 37.5rem;
     margin: 3rem auto;
     display: flex;
