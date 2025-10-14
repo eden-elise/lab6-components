@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progressive Enhancement Web Component</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<simple-chat>
+    <div class="messages">
+        <div class="message-bot">Hello! How are you today?</div>
+        <form class="chat-input-form" id="inputForm">
+            <input
+                    type="text"
+                    class="chat-input"
+                    id="messageInput"
+                    placeholder="Type your message here"
+                    autocomplete="off"
+            />
+            <button type="submit" class="chat-send">↑</button>
+        </form>
+    </div>
+</simple-chat>
+</body>
