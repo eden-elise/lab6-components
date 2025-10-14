@@ -1,3 +1,5 @@
+import {getBotResponse} from "./eliza";
+
 const chatMessages = document.getElementById("chatMessages");
 const messageInput = document.getElementById("messageInput");
 const chatForm = document.getElementById("inputForm");
@@ -69,4 +71,29 @@ function addMessage(text, type) {
     chatMessages.scrollTop = chatMessages.scrollHeight; //autoscroll to bottom
 }
 
+/**
+ * handles the form submission event(sending a message)
+ * @param {Event} event- the form submit event
+ */
+function formSubmit(event) {
+    event.preventDefault(); //prevents page reload and loss of chat messages
+
+    const userMessage = messageInput.trim(); //remove whitespace at beginning and end
+
+    if (userMessage==="") {
+        return;
+    }
+
+    addMessage(userMessage, 'user');
+
+    messageInput.value="";
+
+    const botResponse = getBotResponse(userMessage);
+
+    setTimeout(()=> {
+        addMessage(botResponse, 'bot');
+    }, 500)
+}
+
+chatForm.addEventListener("submit", formSubmit);
 
