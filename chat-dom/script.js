@@ -94,7 +94,7 @@ function formSubmit(event) {
         addMessage(botResponse, 'bot');
     }, 500)
 }
-
+//handles clicking send and clicking enter bc of use of <form>
 chatForm.addEventListener("submit", formSubmit);
 
 addMessage("Hi! How are you today?", "bot");
