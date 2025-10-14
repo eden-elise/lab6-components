@@ -63,7 +63,7 @@ function createMessage(text) {
  */
 function addMessage(text, type) {
     const messageArticle = document.createElement("article");
-    messageArticle.className = `message message-${type}`;
+    messageArticle.className = `message ${type}-messages`;
 
     messageArticle.appendChild(createAvatar(type));
     messageArticle.appendChild(createMessage(text));
@@ -73,7 +73,7 @@ function addMessage(text, type) {
 
 /**
  * handles the form submission event(sending a message)
- * @param {Event} event- the form submit event
+ * @param event - the form submit event
  */
 function formSubmit(event) {
     event.preventDefault(); //prevents page reload and loss of chat messages
