@@ -1,4 +1,4 @@
-import {getBotResponse} from "./eliza.js";
+import {getBotResponse} from "../eliza.js";
 
 const chatMessages = document.getElementById("chatMessages");
 const messageInput = document.getElementById("messageInput");
