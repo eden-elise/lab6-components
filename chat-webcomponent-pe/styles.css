@@ -4,6 +4,30 @@
     --color-mint: #BADFDB;
     --color-coral: #FFA4A4;
     --color-pink: #FFD5D5;
+    --bkg-color: white;
+
+    /* measurements */
+    --min-height-body: 100vh;
+    --body-padding: 1.25rem;
+
+    --chat-max-width: 25rem;
+    --chat-height: 37.5rem;
+    --chat-width: 90%;
+    --chat-border-radius: .5rem;
+    --chat-box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    --chat-overflow-status: hidden;
+
+    --messages-gap: 1rem;
+
+    --message-padding: .75rem 1rem;
+    --message-border-radius: 1.125rem;
+    --line-height: 1.4;
+    --message-max-width: 80%;
+    --message-wordwrap: break-word;
+
+
+
+
 }
 
 /* clearing the existing style */
@@ -20,7 +44,45 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    padding: 1.25rem;
+    min-height: var(--min-height-body);
+    padding: var(--body-padding);
 }
+
+/*
+ Chat container
+ */
+
+chat-component {
+    width: var(--chat-width);
+    max-width: var(--chat-max-width);
+    height: var(--chat-height);
+    background-color: var(--bkg-color);
+    border-radius: var(--chat-border-radius);
+    box-shadow: var(--chat-box-shadow);
+    overflow: var(--chat-overflow-status);
+    display: flex;
+    flex-direction: column;
+}
+
+/*
+Messages Container
+ */
+.messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: var(--body-padding);
+    display: flex;
+    flex-direction: column;
+    gap: var(--body-padding);
+}
+
+.message {
+    padding: var(--message-padding);
+    border-radius: var(--message-border-radius);
+    line-height: var(--line-height);
+    max-width: var(--message-max-width);
+    word-wrap: var(--message-wordwrap);
+}
+
+
 
