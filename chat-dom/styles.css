@@ -8,6 +8,10 @@ Color palette variables
     --color-pink: #FFD5D5;
 }
 
+/* TODO: create variables for the values that need them.
+    Think, am I repeating it? Would it be helpful to go back
+    and change later? */
+
 /* clearing the existing style */
 
 * {
@@ -31,7 +35,7 @@ Chat Container
  */
 .chat-container {
     width: 90%;
-    max-width: 25rem; /* is this fixed height or do you mean use px? */
+    max-width: 25rem; /* ME: is this fixed height or do you mean use px? */
     height: 37.5rem;
     margin: 3rem auto;
     display: flex;
@@ -46,8 +50,8 @@ Chat Container
 Chat Messages
  */
 .chat-messages {
-    flex: 1; /* takes up all available space */
-    overflow-y: auto; /* adds a scroll bar on the y axis - important for later implementations*/
+    flex: 1; /* ME: takes up all available space */
+    overflow-y: auto; /* ME: adds a scroll bar on the y axis - important for later implementations*/
     padding: 1.25rem;
     display: flex;
     flex-direction: column;

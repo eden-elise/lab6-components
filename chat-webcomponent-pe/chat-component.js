@@ -1,10 +1,12 @@
 import { getBotResponse } from '../eliza.js';
 
+//new type of HTMLElement based on the built-in HTMLElement class
 class ChatComponent extends HTMLElement {
     constructor() {
-        super()
+        super() //inherits basic abilities of HTML element
     }
     connectedCallback() {
+        //this. refers to <simple-chat>
         this.messagesContainer = document.querySelector('.messages')
         this.form = this.querySelector('.input-form')
         this.input = this.querySelector('input')

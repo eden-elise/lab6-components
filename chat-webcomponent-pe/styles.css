@@ -1,0 +1,26 @@
+
+:root {
+    --color-cream: #FCF9EA;
+    --color-mint: #BADFDB;
+    --color-coral: #FFA4A4;
+    --color-pink: #FFD5D5;
+}
+
+/* clearing the existing style */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--color-cream);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 1.25rem;
+}
+
