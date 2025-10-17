@@ -12,6 +12,8 @@ class ChatComponent extends HTMLElement {
         this.input = this.querySelector('input')
 
         this.form.addEventListener('submit', (event) => this.handleSubmit(event));
+
+        this.addMessage("Hello! How can I help you?", "bot");
     }
 
     /**

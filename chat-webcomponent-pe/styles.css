@@ -22,7 +22,7 @@
     --messages-gap: 1rem;
     --message-padding: .75rem 1rem;
     --message-border-radius: 1.125rem;
-    --message-corner-radius: .25rem;  /* Sharp corner for bubble tail */
+    --message-corner-radius: .25rem;
     --message-max-width: 80%;
 
     /* input form */
@@ -49,6 +49,19 @@
     --scrollbar-thumb: #888;
     --scrollbar-thumb-hover: #555;
     --scrollbar-radius: 4px;
+
+    /* avatar */
+    --avatar-size: 2.5rem;
+    --avatar-font-size: 1.5rem;
+
+    /* timestamp */
+    --timestamp-font-size: .75rem;
+    --timestamp-color: #999;
+    --timestamp-padding: 0 .5rem;
+
+    /* message layout */
+    --message-gap: .75rem;
+    --content-gap: .25rem;
 }
 
 /* clearing existing styles */
@@ -91,28 +104,71 @@ chat-component {
     gap: var(--messages-gap);
 }
 
-/* individual messages */
+/* individual messages - container with avatar */
 .message-bot,
 .message-user {
-    padding: var(--message-padding);
-    border-radius: var(--message-border-radius);
-    line-height: var(--line-height);
+    display: flex;
+    gap: var(--message-gap);
     max-width: var(--message-max-width);
-    word-wrap: break-word;
+    align-items: flex-start;
 }
 
 .message-bot {
-    background-color: var(--color-pink);
-    color: var(--text-color);
     align-self: flex-start;
-    border-bottom-left-radius: var(--message-corner-radius);
 }
 
 .message-user {
+    align-self: flex-end;
+    flex-direction: row-reverse;
+}
+
+/* avatar */
+.message-avatar {
+    width: var(--avatar-size);
+    height: var(--avatar-size);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--avatar-font-size);
+    flex-shrink: 0;
+}
+
+/* text + timestamp */
+.message-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--content-gap);
+}
+
+.message-content p {
+    padding: var(--message-padding);
+    border-radius: var(--message-border-radius);
+    line-height: var(--line-height);
+    word-wrap: break-word;
+    margin: 0;
+}
+
+.message-bot .message-content p {
+    background-color: var(--color-pink);
+    color: var(--text-color);
+    border-bottom-left-radius: var(--message-corner-radius);
+}
+
+.message-user .message-content p {
     background-color: var(--color-mint);
     color: var(--text-color);
-    align-self: flex-end;
     border-bottom-right-radius: var(--message-corner-radius);
+}
+
+.message-timestamp {
+    font-size: var(--timestamp-font-size);
+    color: var(--timestamp-color);
+    padding: var(--timestamp-padding);
+}
+
+.message-user .message-timestamp {
+    text-align: right;
 }
 
 /* input form */
