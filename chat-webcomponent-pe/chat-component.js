@@ -7,7 +7,7 @@ class ChatComponent extends HTMLElement {
     }
     connectedCallback() {
         //this. refers to <simple-chat>
-        this.messagesContainer = document.querySelector('.messages')
+        this.messagesContainer = this.querySelector('.messages')
         this.form = this.querySelector('.input-form')
         this.input = this.querySelector('input')
         this.button = this.querySelector('button')
