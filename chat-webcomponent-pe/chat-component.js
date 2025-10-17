@@ -10,7 +10,6 @@ class ChatComponent extends HTMLElement {
         this.messagesContainer = this.querySelector('.messages')
         this.form = this.querySelector('.input-form')
         this.input = this.querySelector('input')
-        this.button = this.querySelector('button')
 
         this.form.addEventListener('submit', (event) => this.handleSubmit(event));
     }
@@ -39,6 +38,56 @@ class ChatComponent extends HTMLElement {
     }
 
     /**
+     * creates an avatar element for a message
+     * @param {string} type - 'user' v 'bot'
+     * @returns {HTMLElement} the avatar div element
+     */
+    createAvatar(type) {
+        const avatarDiv = document.createElement('div');
+        avatarDiv.className = 'message-avatar';
+
+        const avatarIcon = document.createElement('span');
+        avatarIcon.textContent = type === 'user' ? '😊' : '🤖';
+
+        avatarDiv.appendChild(avatarIcon);
+        return avatarDiv;
+    }
+
+    /**
+     * creates a timestamp element with the time
+     * @returns {HTMLElement} a time element with formatted time stamp
+     */
+    createTimestamp() {
+        const timestamp = document.createElement("time");
+        timestamp.className = 'message-timestamp';
+        const now = new Date();
+        timestamp.textContent = now.toLocaleTimeString('en-US', {
+            hour: "numeric",
+            minute: "2-digit",
+        })
+        timestamp.setAttribute("datetime", now.toISOString());
+        return timestamp;
+    }
+
+    /**
+     * forms the message (text + timestamp)
+     * @param {string} text - the message text
+     * @returns {HTMLElement} the content div element
+     */
+    createMessageContent(text) {
+        const contentDiv = document.createElement('div');
+        contentDiv.className = 'message-content';
+
+        const textP = document.createElement('p');
+        textP.textContent = text;
+
+        contentDiv.appendChild(textP);
+        contentDiv.appendChild(this.createTimestamp());
+
+        return contentDiv;
+    }
+
+    /**
      * adds a message to the chat
      * @param {string} text - the message text
      * @param {string} type - 'user' v 'bot'
@@ -46,7 +95,9 @@ class ChatComponent extends HTMLElement {
     addMessage(text, type) {
         const messageDiv = document.createElement('div');
         messageDiv.className = `message-${type}`;
-        messageDiv.textContent = text;
+
+        messageDiv.appendChild(this.createAvatar(type));
+        messageDiv.appendChild(this.createMessageContent(text));
 
         this.messagesContainer.appendChild(messageDiv);
         this.messagesContainer.scrollTop = this.messagesContainer.scrollHeight;
