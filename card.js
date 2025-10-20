@@ -35,7 +35,7 @@ class cardTemplate extends HTMLElement {
                     display: block;
                     --card-bg: #fff;
                     --card-radius: 1.25rem;
-                    --card-padding: 2rem;
+                    --card-padding: 1rem;
                     --card-shadow: 0 4px 20px rgba(0,0,0,0.08);
                     --card-shadow-hover: 0 8px 30px rgba(0,0,0,0.12);
                     --transition-speed: 0.3s;
@@ -45,33 +45,33 @@ class cardTemplate extends HTMLElement {
                     --badge-radius: 2rem;
                     --badge-font-size: 0.8rem;
                     --badge-font-weight: 700;
-                    --badge-letter-spacing: 0.5px;
-                    --badge-margin: 1.25rem;
+                    --badge-letter-spacing: 0.005rem;
+                    --badge-margin: 1rem;
                     --badge-bg: #FFD5D5;
                     --badge-color: #333;
 
                     --title-font-size: 1.6rem;
                     --title-color: #333;
-                    --title-margin: 1rem;
+                    --title-margin: .75rem;
                     --title-font-weight: 600;
                     --title-line-height: 1.3;
 
                     --description-color: #666;
-                    --description-line-height: 1.7;
-                    --description-margin: 1.5rem;
+                    --description-line-height: 1.5;
+                    --description-margin: 0rem;
                     --description-font-size: 1rem;
 
                     --feature-color: #333;
-                    --feature-padding: 0.5rem 0;
+                    --feature-padding: 0.25rem;
                     --feature-font-size: 0.95rem;
 
                     --link-color: #FFA4A4;
                     --link-font-weight: 600;
                     --link-font-size: 1.05rem;
-                    --link-gap: 0.5rem;
-                    --link-gap-hover: 0.75rem;
+                    --link-gap: 1rem;
+                    --link-gap-hover: 1rem;
 
-                    --features-margin: 1.75rem;
+                    --features-margin: 1.5rem;
                 }
 
                 .card {
