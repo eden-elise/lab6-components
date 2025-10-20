@@ -1,44 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HTML/CSS only prototype</title>
-    <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 6 Chat Component</title>
+    <link rel="stylesheet" href="main-styles.css">
+    <script type="module" src="card.js"></script>
 </head>
 <body>
-<main class="chat-container">
-    <section class="chat-messages">
-        <!-- two classes for the message articles because all messages will
-        have certain base style features and then the bot and user messages
-        will have styles that are specific to them -->
-        <article class="message bot-messages">
-            <div class="message-avatar">
-                <span class="avatar-icon">🤖</span>
-            </div>
-            <div class="message-content">
-                <p class="message-text"> Hello! How can I help you today?</p>
-                <time class="message-timestamp">10:30am</time>
-            </div>
-        </article>
-        <article class="message user-messages">
-            <div class="message-avatar">
-                <span class="avatar-icon">😊</span>
-            </div>
-            <div class="message-content">
-                <p class="message-text"> Hello! I am learning HTML and CSS</p>
-                <time class="message-timestamp">10:31am</time>
-            </div>
-        </article>
-    </section>
-    <form class="chat-input-form">
-        <input
-                type="text"
-                class="chat-input"
-                placeholder="Type your message here"
-        />
-        <button type="submit" class="chat-send">Send</button>
-    </form>
+<main class="container">
+    <header class="header">
+        <h1>🤖 Chat Component</h1>
+        <p class="subtitle">Prototype + Three Approaches to Component-Based Thinking</p>
+        <p class="instruction">💡 Click "View Demo" to open in a new tab. Compare multiple approaches side-by-side!</p>
+    </header>
+
+    <div class="grid">
+        <!-- Card 1: Prototype -->
+        <approach-card
+                badge="Prototype"
+                title="Pure HTML & CSS"
+                description="A static mockup using only HTML and CSS to work out the interface design."
+                link="chat-prototype-html-css/index.html"
+                theme="prototype"
+                style="--badge-bg: #FFD5D5; --badge-color: #333;">
+            <li slot="features">✓ No dependencies</li>
+            <li slot="features">✓ Always accessible</li>
+            <li slot="features">✓ Simple to understand</li>
+            <li slot="features">✓ No interactivity</li>
+        </approach-card>
+    </div>
+
+    <footer class="footer">
+        <p>COMP 306 Fall 2025</p>
+    </footer>
 </main>
 </body>
 </html>
