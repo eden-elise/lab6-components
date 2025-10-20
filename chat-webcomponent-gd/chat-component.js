@@ -278,6 +278,38 @@ class ChatInterface extends HTMLElement {
         }, 500);
     }
 
+    /**
+     * creates an avatar element for a message
+     * @param {string} type - 'user' or 'bot'
+     * @returns {HTMLElement} the avatar div element
+     */
+    createAvatar(type) {
+        const avatarDiv = document.createElement('div');
+        avatarDiv.className = 'message-avatar';
+
+        const avatarIcon = document.createElement('span');
+        avatarIcon.textContent = type === 'user' ? '😊' : '🤖';
+
+        avatarDiv.appendChild(avatarIcon);
+        return avatarDiv;
+    }
+
+    /**
+     * creates a timestamp element with the time
+     * @returns {HTMLElement} a time element with formatted timestamp
+     */
+    createTimestamp() {
+        const timestamp = document.createElement("time");
+        timestamp.className = 'message-timestamp';
+        const now = new Date();
+        timestamp.textContent = now.toLocaleTimeString('en-US', {
+            hour: "numeric",
+            minute: "2-digit",
+        });
+        timestamp.setAttribute("datetime", now.toISOString());
+        return timestamp;
+    }
+
 }
 
 customElements.define("chat-interface", ChatInterface);
