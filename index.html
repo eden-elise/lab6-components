@@ -10,7 +10,7 @@
 <body>
 <main class="container">
     <header class="header">
-        <h1>🤖 Chat Component</h1>
+        <h1>Chat Component Lab - Eden Tripp </h1>
         <p class="subtitle">Prototype + Three Approaches to Component-Based Thinking</p>
         <p class="instruction">💡 Click "View Demo" to open in a new tab. Compare multiple approaches side-by-side!</p>
     </header>
@@ -29,6 +29,50 @@
             <li slot="features">✓ Simple to understand</li>
             <li slot="features">✓ No interactivity</li>
         </card-template>
+        <!-- Card 2: DOM Manipulation -->
+        <card-template
+                badge="Approach 1"
+                title="DOM Manipulation"
+                description="Interactive chat using vanilla JavaScript and standard DOM methods."
+                link="chat-dom/index.html"
+                theme="approach1"
+                style="--badge-bg: #FFA4A4; --badge-color: white;">
+            <li slot="features">✓ Full interactivity</li>
+            <li slot="features">✓ Eliza-style bot</li>
+            <li slot="features">✓ Standard JavaScript</li>
+            <li slot="features">✓ No encapsulation</li>
+        </card-template>
+
+
+        <!-- Card 3: Progressive Enhancement -->
+        <card-template
+                badge="Approach 2"
+                title="Progressive Enhancement"
+                description="Custom element that enhances existing HTML markup with JavaScript."
+                link="chat-webcomponent-pe/index.html"
+                theme="approach2"
+                style="--badge-bg: #BADFDB; --badge-color: #333;">
+            <li slot="features">✓ Graceful degradation</li>
+            <li slot="features">✓ Semantic base HTML</li>
+            <li slot="features">✓ Web Components API</li>
+            <li slot="features">✓ Global styles</li>
+        </card-template>
+
+
+        <!-- Card 4: Web Component -->
+        <card-template
+                badge="Approach 3"
+                title="Web Component"
+                description="Fully encapsulated custom element with Shadow DOM and internal styles."
+                link="chat-webcomponent-gd/index.html"
+                theme="approach3"
+                style="--badge-bg: #B8A4E8; --badge-color: white;">
+            <li slot="features">✓ Complete encapsulation</li>
+            <li slot="features">✓ Shadow DOM</li>
+            <li slot="features">✓ Self-contained</li>
+            <li slot="features">✓ Highly reusable</li>
+        </card-template>
+
     </div>
 
     <footer class="footer">
