@@ -310,6 +310,40 @@ class ChatInterface extends HTMLElement {
         return timestamp;
     }
 
+    /**
+     * forms the message content (text + timestamp)
+     * @param {string} text - the message text
+     * @returns {HTMLElement} the content div element
+     */
+    createMessageContent(text) {
+        const contentDiv = document.createElement('div');
+        contentDiv.className = 'message-content';
+
+        const textP = document.createElement('p');
+        textP.textContent = text;
+
+        contentDiv.appendChild(textP);
+        contentDiv.appendChild(this.createTimestamp());
+
+        return contentDiv;
+    }
+
+
+    /**
+     * adds a message to the chat
+     * @param {string} text - the message text
+     * @param {string} type - 'user' or 'bot'
+     */
+    addMessage(text, type) {
+        const messageDiv = document.createElement('div');
+        messageDiv.className = `message-${type}`;
+
+        messageDiv.appendChild(this.createAvatar(type));
+        messageDiv.appendChild(this.createMessageContent(text));
+
+        this.messagesContainer.appendChild(messageDiv);
+        this.messagesContainer.scrollTop = this.messagesContainer.scrollHeight;
+    }
 }
 
 customElements.define("chat-interface", ChatInterface);

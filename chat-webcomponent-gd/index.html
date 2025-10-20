@@ -4,6 +4,18 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Shadow DOM Web Component</title>
+    <style>
+        :root { --page-bg: #FCF9EA; }
+        html, body { height: 100%; }
+        body {
+            margin: 0;
+            background: var(--page-bg);
+            display: grid;
+            place-items: center;
+            padding: 1.25rem;
+            font-family: Arial, sans-serif;
+        }
+    </style>
 </head>
 <body>
 <chat-interface></chat-interface>
