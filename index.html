@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML/CSS only prototype</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<main class="chat-container">
+    <section class="chat-messages">
+        <!-- two classes for the message articles because all messages will
+        have certain base style features and then the bot and user messages
+        will have styles that are specific to them -->
+        <article class="message bot-messages">
+            <div class="message-avatar">
+                <span class="avatar-icon">🤖</span>
+            </div>
+            <div class="message-content">
+                <p class="message-text"> Hello! How can I help you today?</p>
+                <time class="message-timestamp">10:30am</time>
+            </div>
+        </article>
+        <article class="message user-messages">
+            <div class="message-avatar">
+                <span class="avatar-icon">😊</span>
+            </div>
+            <div class="message-content">
+                <p class="message-text"> Hello! I am learning HTML and CSS</p>
+                <time class="message-timestamp">10:31am</time>
+            </div>
+        </article>
+    </section>
+    <form class="chat-input-form">
+        <input
+                type="text"
+                class="chat-input"
+                placeholder="Type your message here"
+        />
+        <button type="submit" class="chat-send">Send</button>
+    </form>
+</main>
+</body>
+</html>
