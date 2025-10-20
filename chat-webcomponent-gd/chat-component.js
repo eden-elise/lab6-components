@@ -226,6 +226,58 @@ class ChatInterface extends HTMLElement {
            </style>
        `;
     }
+
+    /**
+     * returns the HTML structure as a string
+     * @returns {string} HTML markup
+     */
+    getHTML() {
+        return `
+           <div class="messages"></div>
+           <form class="input-form">
+               <input type="text" placeholder="Type a message..." autocomplete="off">
+               <button type="submit">↑</button>
+           </form>
+       `;
+    }
+
+
+    /**
+     * selects and stores DOM elements from shadow root
+     */
+    setupElements() {
+        this.messagesContainer = this.shadowRoot.querySelector('.messages');
+        this.form = this.shadowRoot.querySelector('.input-form');
+        this.input = this.shadowRoot.querySelector('input');
+    }
+
+    /**
+     * attaches event listeners
+     */
+    setupEventListeners() {
+        this.form.addEventListener('submit', (event) => this.handleSubmit(event));
+    }
+
+    /**
+     * handles form submission
+     * @param {Event} event - the submit event
+     */
+    handleSubmit(event) {
+        event.preventDefault();
+        const uMessage = this.input.value.trim();
+
+        if (uMessage === "") {
+            return;
+        }
+        this.addMessage(uMessage, "user");
+
+        this.input.value = "";
+        const botResponse = getBotResponse(uMessage);
+        setTimeout(() => {
+            this.addMessage(botResponse, 'bot');
+        }, 500);
+    }
+
 }
 
 customElements.define("chat-interface", ChatInterface);
