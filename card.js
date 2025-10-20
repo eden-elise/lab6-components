@@ -2,7 +2,7 @@
  * card web component
  * reusable card component for displaying different chat approaches
  */
-class card extends HTMLElement {
+class cardTemplate extends HTMLElement {
     constructor() {
         super();
         this.attachShadow({mode: 'open'});
@@ -19,7 +19,7 @@ class card extends HTMLElement {
             ${this.getStyles()}
             <div class="card ${theme}">
                 <div class="card-badge">${badge}</div>
-                <h2>${title}</h2>
+                <h2 class="card-title">${title}</h2>
                 <p class="card-description">${description}</p>
                 <ul class="features">
                     <slot name="features"></slot>
@@ -29,5 +29,4 @@ class card extends HTMLElement {
         `;
     }
 }
-
-customElements.define('card', card);
+customElements.define('card-template', cardTemplate);

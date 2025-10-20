@@ -1,0 +1,112 @@
+/* variables */
+:root {
+    --color-cream: #FCF9EA;
+    --color-mint: #BADFDB;
+    --color-coral: #FFA4A4;
+    --color-pink: #FFD5D5;
+    --color-purple: #B8A4E8;
+    --color-white: white;
+    --text-color: #333;
+    --text-light: #666;
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    --shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.12);
+
+    --min-height: 100vh;
+    --line-height: 1.6;
+    --body-padding: 2rem;
+
+    --container-width: 1200px;
+
+    --header-bottom-margin: 3rem;
+    --header-font-size: 3rem;
+    --h1-margin-bottom: .75rem;
+    --font-weight-heading: 700;
+
+    --subtitle-font-size: 1.2rem;
+    --font-weight-subtitle: 400;
+
+    --instruction-font-size: 1rem;
+    --instruction-margin-top: 1rem;
+
+    --gridgap: 2rem;
+    --grid-margin: 3rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+    background: linear-gradient(135deg, var(--color-cream) 0%, #f5f0e8 100%);
+    min-height: var(--min-height);
+    padding: var(--body-padding);
+    line-height: var(--line-height);
+}
+
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    margin-bottom: var(--header-bottom-margin);
+}
+
+.header h1 {
+    font-size: var(--header-font-size);
+    color: var(--text-color);
+    margin-bottom: var(--h1-margin-bottom);
+    font-weight: var(--font-weight-heading);
+}
+
+.subtitle {
+    font-size: var(--subtitle-font-size);
+    color: var(--text-light);
+    font-weight: var(--font-weight-subtitle);
+}
+
+.instruction {
+    font-size: var(--instruction-font-size);
+    color: var(--text-light);
+    margin-top: var(--instruction-margin-top);
+    font-style: italic;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--gridgap);
+    margin-bottom: var(--grid-margin);
+}
+
+card-template.prototype {
+    --badge-bg: var(--color-pink);
+    --badge-color: var(--text-color);
+}
+
+ card-template.approach1 {
+    --badge-bg: var(--color-coral);
+    --badge-color: white;
+}
+
+card-template.approach2 {
+    --badge-bg: var(--color-mint);
+    --badge-color: var(--text-color);
+}
+
+card-template.approach3 {
+    --badge-bg: var(--color-purple);
+    --badge-color: white;
+}
+
+.footer {
+    text-align: center;
+    padding: 2rem 0;
+    color: var(--text-light);
+    font-size: 0.95rem;
+}
